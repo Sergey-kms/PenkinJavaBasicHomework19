@@ -1,2 +1,4 @@
-package ru.penkin.java.basic.homework19;public class Orange {
+package ru.penkin.java.basic.homework19;
+
+public class Orange extends Fruit {     // В гитхаб master
 }
