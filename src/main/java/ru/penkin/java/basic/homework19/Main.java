@@ -1,6 +1,6 @@
 package ru.penkin.java.basic.homework19;
 
-public class Main {     // В гитхаб master
+public class Main {     // В гитхаб vetka_1
     public static void main(String[] args) {
         // Создаю несколько фруктов
         Apple apple1 = new Apple();

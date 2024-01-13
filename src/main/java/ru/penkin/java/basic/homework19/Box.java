@@ -2,7 +2,7 @@ package ru.penkin.java.basic.homework19;
 
 import java.util.ArrayList;
 
-public class Box<T extends Fruit> {     // В гитхаб master
+public class Box<T extends Fruit> {     // В гитхаб vetka_1
     private ArrayList<T> fruits; // Перечень фруктов в коробке
 
     public Box() {
