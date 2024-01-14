@@ -1,23 +1,21 @@
 package ru.penkin.java.basic.homework19;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class Box<T extends Fruit> {     // В гитхаб vetka_1
-    private ArrayList<T> fruits; // Перечень фруктов в коробке
+public class Box<T extends Fruit> {     // В гитхаб vetka_2
+    private List<T> fruits; // Перечень фруктов в коробке.
 
     public Box() {
         fruits = new ArrayList<T>();
     }
 
+    public List<T> getFruits() {
+        return fruits;
+    }
+
     private double weightFruit;
 
-    public double getWeightFruit() {
-        return getWeightFruit();
-    }
-
-    public void setWeightFruit(double weightFruit) {
-        this.weightFruit = weightFruit;
-    }
 
     public void addFruit(T fruit) {     // Метод для добавления фруктов в коробку
         fruits.add(fruit);
@@ -26,7 +24,7 @@ public class Box<T extends Fruit> {     // В гитхаб vetka_1
     public double getWeight() {     // Метод для вычисления веса коробки
         weightFruit = 0;
         for (T fruit : fruits) {
-            weightFruit += 0.25;    // У всех фруктов вес одинаковый
+            weightFruit += fruit.getWeightFruit();    // У всех фруктов вес одинаковый
         }
         return weightFruit;
     }
@@ -35,7 +33,14 @@ public class Box<T extends Fruit> {     // В гитхаб vetka_1
         return Math.abs(this.getWeight() - otherBox.getWeight()) < 0.0001;
     }
 
-    public void transfer(Box<T> otherBox) {         // Метод для пересыпания фруктов из текущей коробки в другую
+    public void transfer(Box<T> otherBox) {        // Метод пересыпания фруктов из текущей коробки в другую
+        if (otherBox == null) {
+            System.out.println("Пустое значение передаваемой коробки");
+            return;
+        } else if (otherBox == this) {
+            System.out.println("Передайте другую коробку");
+            return;
+        }
         otherBox.fruits.addAll(this.fruits);
         this.fruits.clear();
     }

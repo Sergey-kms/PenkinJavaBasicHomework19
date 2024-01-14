@@ -1,19 +1,7 @@
 package ru.penkin.java.basic.homework19;
 
-public class Main {     // В гитхаб vetka_1
+public class Main {     // В гитхаб vetka_2
     public static void main(String[] args) {
-        // Создаю несколько фруктов
-        Apple apple1 = new Apple();
-        Apple apple2 = new Apple();
-        Apple apple3 = new Apple();
-        Apple apple4 = new Apple();
-        Apple apple5 = new Apple();
-        Apple apple6 = new Apple();
-        Orange orange1 = new Orange();
-        Orange orange2 = new Orange();
-        Orange orange3 = new Orange();
-        Orange orange4 = new Orange();
-        Orange orange5 = new Orange();
 
         // Создаю коробки
         Box appleBox = new Box();
@@ -21,31 +9,16 @@ public class Main {     // В гитхаб vetka_1
         Box mixedBox = new Box();
 
         // Добавляю фрукты в соответствующие коробки
-        appleBox.addFruit(apple1);
-        appleBox.addFruit(apple2);
-        appleBox.addFruit(apple3);
-        appleBox.addFruit(apple4);
-        appleBox.addFruit(apple5);
-        appleBox.addFruit(apple6);
+        for (int i = 0; i <= 5; i++) {
+            appleBox.addFruit(new Apple());
+        }
 
-        orangeBox.addFruit(orange1);
-        orangeBox.addFruit(orange2);
-        orangeBox.addFruit(orange3);
-        orangeBox.addFruit(orange4);
-        orangeBox.addFruit(orange5);
+        for (int i = 0; i <= 7; i++) {
+            orangeBox.addFruit(new Orange());
+        }
 
-        mixedBox.addFruit(apple1);
-        mixedBox.addFruit(apple2);
-        mixedBox.addFruit(apple3);
-        mixedBox.addFruit(apple4);
-        mixedBox.addFruit(apple5);
-        mixedBox.addFruit(apple6);
-        mixedBox.addFruit(orange1);
-        mixedBox.addFruit(orange2);
-        mixedBox.addFruit(orange3);
-        mixedBox.addFruit(orange4);
-        mixedBox.addFruit(orange5);
-
+        mixedBox.getFruits().addAll(appleBox.getFruits());
+        mixedBox.getFruits().addAll(orangeBox.getFruits());
 
         double appleBoxWeight = appleBox.getWeight();
         double orangeBoxWeight = orangeBox.getWeight();
