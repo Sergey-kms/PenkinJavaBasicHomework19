@@ -1,6 +1,6 @@
 package ru.penkin.java.basic.homework19;
 
-public class Main {     // В гитхаб vetka_2
+public class Main {     // В гитхаб vetka_3
     public static void main(String[] args) {
 
         // Создаю коробки

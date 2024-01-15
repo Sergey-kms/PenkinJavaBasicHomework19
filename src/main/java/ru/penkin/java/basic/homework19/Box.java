@@ -3,7 +3,7 @@ package ru.penkin.java.basic.homework19;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Box<T extends Fruit> {     // В гитхаб vetka_2
+public class Box<T extends Fruit> {     // В гитхаб vetka_3 правки по замечаниям
     private List<T> fruits; // Перечень фруктов в коробке.
 
     public Box() {
@@ -14,15 +14,14 @@ public class Box<T extends Fruit> {     // В гитхаб vetka_2
         return fruits;
     }
 
-    private double weightFruit;
-
+    // private double weightFruit;   Убрал эту лишнюю переменную, она используется внутри метода getWeight
 
     public void addFruit(T fruit) {     // Метод для добавления фруктов в коробку
         fruits.add(fruit);
     }
 
     public double getWeight() {     // Метод для вычисления веса коробки
-        weightFruit = 0;
+        double weightFruit = 0;     // Переменная внутри метода getWeight
         for (T fruit : fruits) {
             weightFruit += fruit.getWeightFruit();    // У всех фруктов вес одинаковый
         }
